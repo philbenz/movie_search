@@ -21,5 +21,12 @@ $.ajax({
 }).done(function(movie){
   console.log(movie);
   $('.poster').append('<img src="' + movie.Poster + '"</img>"');
+  $('.poster_title').append(movie.Title)
+  var genres = movie.Genre.split(',')
+  console.log(genres);
+  for (var i = 0; i < genres.length; i++) {
+    $('#genre_select').append('<option>' + genres[i] + '</option>')
+  }
+
 });
 }
